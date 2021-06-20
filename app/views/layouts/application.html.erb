@@ -11,7 +11,7 @@
 
   <body>
     <header>
-      <il>bookers</il>
+      <il>Bookers</il>
       <% if user_signed_in? %>
       <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
@@ -26,5 +26,6 @@
     <% end %>
     </header>
     <%= yield %>
+    <footer>CopyRight Infratop.inc</footer>
   </body>
 </html>
