@@ -16,7 +16,7 @@
     <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
   <% end %>
 </div>
-<%= form_with model: @book, local: true do |f| %>
+<%= form_with model: @book_new, local: true do |f| %>
 <h2>New book</h2>
   <div class="field">
    <label for="book_title">Title</label>
@@ -29,3 +29,23 @@
      <%= f.submit 'Create Book' %>
   </div>
 <% end %>
+
+<div class="table">
+  <h2>Books</h2>
+  <table>
+    <thead>
+      <tr>
+      <th>Title</th>
+      <th>Opinion</th>
+    </tr>
+    </thead>
+    <today>
+      <tr>
+        <% @books.each do |book| %>
+        <td class="book-title"><%= link_to 'book.title',book_path(book) %></td>
+        <td class="book-body"><%= book.body %></td>
+        </tr>
+      <% end %>
+    </today>
+  </table>
+</div>

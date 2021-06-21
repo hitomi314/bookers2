@@ -1,11 +1,5 @@
-<div class="notifications">
-  <% flash.each do |key, value| %>
-    <p class="alert alert-<%= key %>">
-      <%= value %>
-    </p>
-  <% end %>
-</div>
-
+<%= render 'books/list', book_new: @book_new, user: @user %>
+<h2>Book datil</h2>
 <p>
   <strong>Title:</strong>
   <%= @book.title %>

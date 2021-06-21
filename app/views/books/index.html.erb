@@ -1,3 +1,4 @@
+<%= render 'books/list', book_new: @book_new, user: @user %>
 <h1 class="heading">Books</h1>
   <table>
     <thead>
@@ -10,11 +11,8 @@
     <today>
       <tr>
         <% @books.each do |book| %>
-        <td class="book-title"><%= book.title %></td>
+        <td class="book-title"><%= link_to 'book.title',book_path(book) %></td>
         <td class="book-body"><%= book.body %></td>
-        <td><%= link_to 'Show', book_path(book) %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to "Destroy", book_path(book),method: :delete %></td>
         </tr>
       <% end %>
     </today>
