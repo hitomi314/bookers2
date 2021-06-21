@@ -11,7 +11,7 @@
     <today>
       <tr>
         <% @books.each do |book| %>
-        <td class="book-title"><%= link_to 'book.title',book_path(book) %></td>
+        <td class="book-title"><%= link_to book.title,book_path(book) %></td>
         <td class="book-body"><%= book.body %></td>
         </tr>
       <% end %>

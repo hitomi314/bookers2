@@ -34,7 +34,8 @@
   <h2>Books</h2>
   <table>
     <thead>
-      <tr>
+    <tr>
+      <th colspan=""></th>
       <th>Title</th>
       <th>Opinion</th>
     </tr>
@@ -42,7 +43,12 @@
     <today>
       <tr>
         <% @books.each do |book| %>
-        <td class="book-title"><%= link_to 'book.title',book_path(book) %></td>
+        <td>
+         <%= link_to book_path(book.id) do %>
+          <%= attachment_image_tag book.user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %>
+         <% end %>
+        </td>
+        <td class="book-title"><%= link_to book.title,book_path(book) %></td>
         <td class="book-body"><%= book.body %></td>
         </tr>
       <% end %>
