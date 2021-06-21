@@ -21,12 +21,11 @@
         </td>
         <td class="book-title"><%= link_to @book.title, book_path(params[:id]) %></td>
         <td class="book-body"><%= @book.body %></td>
-        </tr>
+        <% if @book.user == current_user %>
+          <td><%= link_to "Edit", edit_book_path(@book) %></td>
+          <td><%= link_to "Destroy", book_path(@book),method: :delete %></td>
+        <% end %>
+      </tr>
     </today>
   </table>
 </div>
-
-<% if @book.user == current_user %>
- <%= link_to "Edit", edit_book_path(@book) %>
- <%= link_to "Destroy", book_path(@book),method: :delete %>
-<% end %>
