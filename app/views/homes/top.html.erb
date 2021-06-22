@@ -10,12 +10,21 @@
         </p>
         <p>you can share and exchange your opinions , inpressions , and emotions</p>
         <p>about various books!</p>
+        <% if user_signed_in? %>
+        <div class="row">
+          <%= link_to "Log in", user_path(current_user.id) %>
+        </div>
+        <div class="row">
+          <%= link_to "Sing up", user_path(current_user.id) %>
+        </div>
+        <% else %>
         <div class="row">
           <%= link_to "Log in", user_session_path %>
         </div>
         <div class="row">
           <%= link_to "Sing up", new_user_registration_path %>
         </div>
+        <% end %>
     </div>
   </div>
 </div>
