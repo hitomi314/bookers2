@@ -13,23 +13,23 @@
         <% if user_signed_in? %>
         <div class="row">
           <button type="button" class="btn btn-info btn-lg btn-block">
-            <%= link_to "Log in", user_path(current_user.id) %>
+            <%= link_to "Log in", user_path(current_user.id), class:"text-light" %>
           </button>
         </div>
         <div class="row">
           <button type="button" class="btn btn-success btn-lg btn-block">
-           <%= link_to "Sing up", user_path(current_user.id) %>
+           <%= link_to "Sing up", user_path(current_user.id), class:"text-light" %>
           </button>
         </div>
         <% else %>
         <div class="row">
           <button type="button" class="btn btn-info btn-lg btn-block">
-            <%= link_to "Log in", user_session_path %>
+            <%= link_to "Log in", user_session_path, class:"text-light" %>
           </button>
         </div>
         <div class="row">
           <button type="button" class="btn btn-success btn-lg btn-block">
-            <%= link_to "Sing up", new_user_registration_path %>
+            <%= link_to "Sing up", new_user_registration_path, class:"text-light" %>
           </button>
         </div>
         <% end %>

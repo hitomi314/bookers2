@@ -17,12 +17,12 @@
               <% if @book.user == current_user %>
                 <td>
                   <button type="button" class="btn btn-success">
-                    <%= link_to "Edit", edit_book_path(@book) %>
+                    <%= link_to "Edit", edit_book_path(@book), class:"text-light" %>
                   </button>
                 </td>
                 <td>
                   <button type="button" class="btn btn-danger">
-                    <%= link_to "Destroy", book_path(@book),method: :delete, data:{ confirm: '本当に消しますか？' } %>
+                    <%= link_to "Destroy", book_path(@book),method: :delete, data:{ confirm: '本当に消しますか？' }, class:"text-light" %>
                   </button>
                 </td>
               <% end %>
