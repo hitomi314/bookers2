@@ -9,38 +9,47 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+<body>
     <header>
-      <il><%= link_to 'Bookers', root_path %></il>
-      <% if user_signed_in? %>
-      <li>
-        <%= link_to 'Home', user_path(current_user.id) %>
-      </li>
-      <li>
-        <%= link_to 'Users', users_path(current_user.id) %>
-      </li>
-      <li>
-        <%= link_to 'Books', books_path(current_user.id) %>
-      </li>
-      <li>
-        <%= link_to "logout", destroy_user_session_path, method: :delete %>
-      </li>
+      <nav>
+        <div class="container">
+         <il><%= link_to 'Bookers', root_path %></il>
+         <div>
+          <% if user_signed_in? %>
+          <ul>
+           <li>
+            <%= link_to 'Home', user_path(current_user.id) %>
+           </li>
+           <li>
+            <%= link_to 'Users', users_path(current_user.id) %>
+           </li>
+           <li>
+            <%= link_to 'Books', books_path(current_user.id) %>
+           </li>
+           <li>
+            <%= link_to "logout", destroy_user_session_path, method: :delete %>
+           </li>
 
-    <% else %>
-      <li>
-        <%= link_to 'Home', root_path %>
-      </li>
-      <li>
-        <%= link_to 'About', home_about_path %>
-      </li>
-      <li>
-        <%= link_to "sign up", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "login", new_user_session_path %>
-      </li>
-    <% end %>
+           <% else %>
+           <li>
+            <%= link_to 'Home', root_path %>
+           </li>
+           <li>
+            <%= link_to 'About', home_about_path %>
+           </li>
+           <li>
+            <%= link_to "sign up", new_user_registration_path %>
+           </li>
+           <li>
+            <%= link_to "login", new_user_session_path %>
+           </li>
+          </ul>
+          <% end %>
+         </div>
+       </div>
+      </nav>
     </header>
+<main>
 <div class="notifications">
   <% flash.each do |key, value| %>
     <p class="alert alert-<%= key %>">
@@ -49,6 +58,15 @@
   <% end %>
 </div>
     <%= yield %>
-    <footer>CopyRight Infratop.inc</footer>
-  </body>
+</main>
+<footer>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="mx-auto">
+        CopyRight Infratop.inc
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
 </html>
