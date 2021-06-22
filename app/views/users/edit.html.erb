@@ -1,33 +1,40 @@
-<h2>User info</h2>
-<%= form_with model:@user, local:true do |f| %>
- <% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= @user.errors.count %> errors prohibited this product from being saved:</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h2>User info</h2>
+      <%= form_with model:@user, local:true do |f| %>
+       <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= @user.errors.count %> errors prohibited this product from being saved:</h2>
 
-     <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+           <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+           </ul>
+         </div>
+       <% end %>
+      <div class="name">
+        <label for="inputName">Name</label>
+        <div class=form>
+          <%= f.text_field :name, autofocus: true, id:"inputName" %>
+        </div>
+      </div>
+      <div class="image">
+        <label for="inputImage">Image</label>
+        <div class=form>
+          <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+        </div>
+      </div>
+      <div class="introduction">
+        <label for="inputIntroduction">Introduction</label>
+        <div class=form>
+          <%= f.text_field :introduction, id:"inputIntroduction" %>
+        </div>
+      </div>
+      <div class="action"><%= f.submit "Update User" %></div>
       <% end %>
-     </ul>
-   </div>
-<% end %>
-<div class="name">
-  <label for="inputName">Name</label>
-  <div class=form>
-    <%= f.text_field :name, autofocus: true, id:"inputName" %>
+    </div>
   </div>
 </div>
-<div class="image">
-  <label for="inputImage">Image</label>
-  <div class=form>
-    <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
-  </div>
-</div>
-<div class="introduction">
-  <label for="inputIntroduction">Introduction</label>
-  <div class=form>
-    <%= f.text_field :introduction, id:"inputIntroduction" %>
-  </div>
-</div>
-<div class="action"><%= f.submit "Update User" %></div>
-<% end %>
+
