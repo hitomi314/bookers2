@@ -12,17 +12,25 @@
         <p>about various books!</p>
         <% if user_signed_in? %>
         <div class="row">
-          <%= link_to "Log in", user_path(current_user.id) %>
+          <button type="button" class="btn btn-info btn-lg btn-block">
+            <%= link_to "Log in", user_path(current_user.id) %>
+          </button>
         </div>
         <div class="row">
-          <%= link_to "Sing up", user_path(current_user.id) %>
+          <button type="button" class="btn btn-success btn-lg btn-block">
+           <%= link_to "Sing up", user_path(current_user.id) %>
+          </button>
         </div>
         <% else %>
         <div class="row">
-          <%= link_to "Log in", user_session_path %>
+          <button type="button" class="btn btn-info btn-lg btn-block">
+            <%= link_to "Log in", user_session_path %>
+          </button>
         </div>
         <div class="row">
-          <%= link_to "Sing up", new_user_registration_path %>
+          <button type="button" class="btn btn-success btn-lg btn-block">
+            <%= link_to "Sing up", new_user_registration_path %>
+          </button>
         </div>
         <% end %>
     </div>

@@ -16,3 +16,15 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+.navbar-dark .navbar-brand {
+    color: #fff;
+}
+
+.row {
+    margin : 15px;
+}
+
+.actions {
+    margin : 15px;
+}
