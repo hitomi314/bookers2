@@ -13,15 +13,21 @@
 <% end %>
 <div class="name">
   <label for="inputName">Name</label>
-  <%= f.text_field :name, autofocus: true, id:"inputName" %>
+  <div class=form>
+    <%= f.text_field :name, autofocus: true, id:"inputName" %>
+  </div>
 </div>
 <div class="image">
   <label for="inputImage">Image</label>
-  <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+  <div class=form>
+    <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+  </div>
 </div>
 <div class="introduction">
   <label for="inputIntroduction">Introduction</label>
-  <%= f.text_field :introduction, id:"inputIntroduction" %>
+  <div class=form>
+    <%= f.text_field :introduction, id:"inputIntroduction" %>
+  </div>
 </div>
 <div class="action"><%= f.submit "Update User" %></div>
 <% end %>

@@ -13,11 +13,11 @@
  <% end %>
  <div class="field">
    <label for="book_title">Title</label>
-   <%= f.text_field :title %>
+   <div class=form><%= f.text_field :title %></div>
  </div>
  <div class="field">
    <label for="book_body">Opinion</label>
-   <%= f.text_area :body %>
+   <div class=form><%= f.text_area :body %></div>
  </div>
  <div class="actions">  <%= f.submit 'Update Book' %></div>
  <% end %>
