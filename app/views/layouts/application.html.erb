@@ -23,16 +23,16 @@
            <% if user_signed_in? %>
              <li>
                 <%= link_to user_path(current_user.id), class:"text-light" do %>
-                <i class="fas fa-home"></i><span>Home</span>
+                <i class="fas fa-home nav-link text-light"></i><span>Home</span>
                 <% end %>
              </li>
              <li>
-                <%= link_to users_path(current_user.id), class:"text-light" do %>
+                <%= link_to users_path, class:"text-light" do %>
                 <i class="fas fa-users nav-link text-light"></i><span>Users</span>
                 <% end %>
              </li>
              <li>
-                <%= link_to books_path(current_user.id), class:"text-light" do%>
+                <%= link_to books_path, class:"text-light" do%>
                 <i class="fas fa-book-open nav-link text-light"></i><span>Books</span>
                 <% end %>
              </li>
