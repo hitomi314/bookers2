@@ -14,6 +14,7 @@
               </td>
               <td class="book-title"><%= link_to @book.title, book_path(params[:id]) %></td>
               <td class="book-body"><%= @book.body %></td>
+              <td class="favorite"><%= render 'books/favo', book: @book %></td>
               <% if @book.user == current_user %>
                 <td>
                   <button type="button" class="btn btn-success">

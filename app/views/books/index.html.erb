@@ -32,6 +32,7 @@
                </td>
                <td class="book-title"><%= link_to book.title,book_path(book) %></td>
                <td class="book-body"><%= book.body %></td>
+               <td class="favorite"><%= render 'books/favo', book: book %></td>
               </tr>
              <% end %>
            </today>
