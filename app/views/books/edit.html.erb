@@ -1,4 +1,4 @@
-<% if book.errors.any? %>
+<% if @book.errors.any? %>
   <%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:
   <% book.errors.full_messages.each do |message| %>
     <%= message %>
