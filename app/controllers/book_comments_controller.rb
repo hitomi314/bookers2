@@ -18,7 +18,7 @@ class BookCommentsController < ApplicationController
     @book_comment = BookComment.find_by(id: params[:id], book_id: params[:book_id])
     @book_comment.destroy
     redirect_back(fallback_location: root_path)
-    if @book_comment.user != current_user
+    if @book_comment.user != current_users
       redirect_to user_path(current_user.id)
     end
   end
