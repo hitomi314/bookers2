@@ -17,6 +17,16 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :followed
   # 与フォロー関係を通じて参照→follower_idをフォローしている人
   
+  def follow(user_id)
+    relationships.create(followed_id: user_id)
+  end
+  def unfollow(user_id)
+    relationships.find_by(followed_id: user_id).destroy
+  end
+  def following?(user)
+    followings.include?(user)
+  end
+  
   attachment :profile_image
 
   validates :name, presence: true, uniqueness: true, length: { in: 2..20 }
