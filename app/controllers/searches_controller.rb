@@ -16,9 +16,9 @@ class SearchesController < ApplicationController
       end
     elsif model == 'book'
       if method == 'perfect'
-        Post.where(title: content)
+        Book.where(title: content)
       else
-        Post.where('title LIKE ?', '%'+content+'%')
+        Book.where('title LIKE ?', '%'+content+'%')
       end
     end
   end
