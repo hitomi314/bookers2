@@ -1,0 +1,3 @@
+// #favoriteこの部分のHTMLだけ、renderで部分的に更新するという処理
+
+$("#favo_<%= @book.id %>").html("<%= j(render 'books/favo', book: @book ) %>");

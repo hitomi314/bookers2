@@ -14,7 +14,7 @@
               </td>
               <td class="book-title"><%= link_to @book.title, book_path(@book.id) %></td>
               <td class="book-body"><%= @book.body %></td>
-              <td class="favorite"><%= render 'books/favo', book: @book %></td>
+              <td id="favo_<%= @book.id %>"><%= render 'books/favo', book: @book %></td>
               <td class="comment">コメント件数：<%= @book.book_comments.count %></td>
               <% if @book.user == current_user %>
                 <td>
