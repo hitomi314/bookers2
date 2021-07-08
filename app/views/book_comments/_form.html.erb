@@ -1,0 +1,14 @@
+<% if book_comment.errors.any? %>
+ <div id="error_explanation">
+   <h2><%= book_comment.errors.count %> error prohibited this product from being saved:</h2>
+   <ul>
+    <% book_comment.errors.full_messages.each do |message| %>
+     <li><%= message %></li>
+    <% end %>
+   </ul>
+ </div>
+<% end %>
+<%= form_with(model:[book, book_comment], remote: true) do |f| %>
+      <%= f.text_area :comment, rows:'5', cols:"100" %>
+      <%= f.submit "送信" %>
+<% end %>
